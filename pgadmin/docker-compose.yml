@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  pgadmin:
+    image: dpage/pgadmin4:6.8
+    container_name: pgadmin
+    ports:
+      - "80:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=postgres@domain.local
+      - PGADMIN_DEFAULT_PASSWORD=postgres
+

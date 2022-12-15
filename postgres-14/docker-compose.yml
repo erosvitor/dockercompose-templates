@@ -1,0 +1,18 @@
+version: "3"
+
+volumes:
+  postgres14_data:
+    driver: local
+
+services:
+  postgres14:
+    image: postgres:14.2
+    container_name: postgres14
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres14_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+

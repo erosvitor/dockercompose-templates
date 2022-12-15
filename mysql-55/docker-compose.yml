@@ -1,0 +1,18 @@
+version: "3"
+
+volumes:
+  mysql55_data:
+    driver: local
+
+services:
+  mysql55:
+    image: mysql/mysql-server:5.5
+    container_name: mysql55    
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql55_data:/var/lib/mysql
+      - ./cnf/my.cnf:/etc/my.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+
